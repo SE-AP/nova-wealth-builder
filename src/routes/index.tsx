@@ -1,26 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/landing/Nav";
+import { Hero } from "@/components/landing/Hero";
+import { CryptoTicker } from "@/components/landing/CryptoTicker";
+import { WhyUs } from "@/components/landing/WhyUs";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Plans } from "@/components/landing/Plans";
+import { Calculator } from "@/components/landing/Calculator";
+import { Stats } from "@/components/landing/Stats";
+import { ActivityPopups } from "@/components/landing/ActivityPopups";
+import { Footer } from "@/components/landing/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "NovaCapital — Institutional-grade crypto investing" },
+      {
+        name: "description",
+        content:
+          "Daily yields on digital assets. Fully automated strategies. Secure custody. Invest with NovaCapital.",
+      },
+      { property: "og:title", content: "NovaCapital — Institutional-grade crypto investing" },
+      {
+        property: "og:description",
+        content: "Daily yields on digital assets. Fully automated strategies. Secure custody.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-white">
+      <Nav />
+      <Hero />
+      <CryptoTicker />
+      <WhyUs />
+      <HowItWorks />
+      <Plans />
+      <Calculator />
+      <Stats />
+      <Footer />
+      <ActivityPopups />
+    </main>
+  );
 }
