@@ -65,3 +65,8 @@ export const getRouter = () => {
 
   return router;
 };
+export const router = createRouter({
+  routeTree,
+  context: {},
+  scrollRestoration: true,
+})
