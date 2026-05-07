@@ -1,6 +1,8 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -49,8 +51,14 @@
 }
 
 @layer base {
-  * { border-color: var(--color-hairline); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-hairline);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: #ffffff;
     color: #1a1a1a;
@@ -60,15 +68,40 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.animate-marquee { animation: marquee 40s linear infinite; }
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotateZ(0deg); }
-  50% { transform: translateY(-14px) rotateZ(3deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotateZ(3deg);
+  }
 }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-float-slow { animation: float 9s ease-in-out infinite; }
-.animate-float-delay { animation: float 7s ease-in-out infinite; animation-delay: -2s; }
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 7s ease-in-out infinite;
+  animation-delay: -2s;
+}
